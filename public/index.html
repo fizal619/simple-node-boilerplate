@@ -6,13 +6,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>RESERVATIONS</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/main.js"></script>
-  <h1>Cupcake Restaurant</h1>
-</body>
 
+  <div class="top-navbar">
+    <a id='home'class="nav-item" onclick="showHome()">Home</a>
+    <a id='reservation' class="nav-item" onclick="showReservation()">Reservation</a>
+    <a id='booked' class="nav-item" onclick="showUpcoming()">Upcoming</a>
+  </div>
+  <!-- homepage -->
+  <div id='homepage' class='home'>
+    <img class='home-image' src='./img/Logo.png' alt='Pokemon Cafe Logo'/>
+    <h1>Welcome to Pokemon Cafe!</h1>
+    <p>Please select below to book a reservation or to check upcoming reservations </p>
+  </div>
+  <!-- reservations -->
+  <div id='reservationspage' alt="Availability for Reservations">
+    <h1>Upcoming Reservations</h1>
+  </div>
+
+  <!-- upcoming -->
+  <div id="upcomingpage"  alt="Upcoming Reservations">
+    <h1>upcoming</h1>
+    <div class="tablewrapper">
+      <div class="tableheader">
+      hello
+      </div>
+      <table style="width:100%">
+      
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th> 
+      
+        </tr>
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td>
+      
+        </tr>
+        <tr>
+          <td>Eve</td>
+          <td>Jackson</td>
+      
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+      
+        </tr>
+      </table>
+      </div>
+  </div>
+</body>
 </html>
