@@ -14,18 +14,21 @@ module.exports = (sequelize, DataTypes) => {
       const tablesTaken = await this.findAll({
         where: { slot: slot },
       });
+      console.log(tablesTaken.length, 'JFAJKFDSJKDFSJNKFD');
       // const previousHalfHour = await this.findAll({
       //   where:{slot:slot}
       // })
-      if (tablesTaken < 10) return false;
+      if (tablesTaken.length < 10) return false;
       else return true;
     }
 
     static async newReservation(name, slot) {
-      if (!this.checkConflicts(slot)) {
-        return 'No tables available at this time';
+      const conflictCheck = await this.checkConflicts(slot);
+      if (conflictCheck === true) {
+        console.log('No tables available at this time');
+        return;
       }
-      if (this.checkConflicts(slot)) {
+      if (conflictCheck === false) {
         await this.create({
           name: name,
           slot: slot,
