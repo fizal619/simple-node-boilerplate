@@ -8,7 +8,12 @@ const getReservations = () => {
       console.log(reservations);
       const names = reservations
         .map(user => {
-          return `<p>Name: ${user.name}</p>`;
+          return `
+          <div class="user">
+          <p>Name: ${user.name}</p>
+          <p>Slot: ${user.slot}</p>
+          </div>
+          `;
         })
         .join('');
       document.querySelector('#app').insertAdjacentHTML('afterbegin', names);

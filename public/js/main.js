@@ -3,4 +3,5 @@
 
 //Name of restaurant rendered on the front page
 document.body.innerHTML = '<h1>Potayto Potahto Reservations</h1>';
+
 getReservations();
