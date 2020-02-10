@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const SequelizeReservation = sequelize.define('Reservation', {
     name: DataTypes.STRING,
-    slot: DataTypes.INTEGER,
+    slot: DataTypes.DATE,
   });
 
   class Reservation extends SequelizeReservation {
@@ -19,12 +19,13 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static async newReservation(req, res) {
-      if (this.checkConflicts(req.body.slot)) {
-        return await this.create({
+      if (!this.checkConflicts(req.body.slot)) {
+        return 'No tables available at this time';
+      } else
+        await this.create({
           name: req.body.name,
           slot: req.body.slot,
         });
-      } else return error('No tables available at this time');
     }
   }
   return Reservation;
