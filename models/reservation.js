@@ -11,11 +11,12 @@ module.exports = (sequelize, DataTypes) => {
     static async all(){ 
       return await this.findAll();
       reservations = Reservation.create({
-        slot: Da
-        
+        name: req.body.name,
+        slot: new Date(req.body.slot)        
       }) 
     }
   }
+
   
   return Reservation;
 };
