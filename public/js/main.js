@@ -48,7 +48,7 @@ const getReservation = () => {
 const checkIfReserved = () => {
   let tables = Array.from(document.getElementById('table'))
   console.log(tables) 
-  tables.addEventListener("submit", function(event) {
+  document.getElementById('table').addEventListener("submit", function(event) {
   event.preventDefault() 
   tables.forEach(table => {
       console.log(table)
@@ -59,6 +59,7 @@ const checkIfReserved = () => {
           console.log(table)
       }
     })
+  })
 }
 checkIfReserved()
 
@@ -67,18 +68,16 @@ checkIfReserved()
 
 // const tables = document.getElementById('tables-row')
 //     tables.addEventListener("submit", function(event) {
-      // event.preventDefault();
+//       event.preventDefault();
       const makeReservation = () => {
-        fetch('http://localhost:3000/makeReservation',{
+        fetch('http://localhost:3000/reservations',{
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify( 
             {
-              id: id,
-              name: req.body.name,
-              slot: date,
+              obj
             })
           })
           .then(resp => resp.json())

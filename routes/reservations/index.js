@@ -11,10 +11,10 @@ router.get('/', async (req,res) => {
 
 });
 
-router.post('/newReservations', async (req, res) => {
+router.post('/', async (req, res) => {
   res.json(await Reservation.all());
-
-
+  res.send('post successful')
 })
+
 module.exports = router;
 

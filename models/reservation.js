@@ -11,8 +11,11 @@ module.exports = (sequelize, DataTypes) => {
   class Reservation extends SequelizeReservation {
     static async all(){ 
       return await this.findAll();
+      reservations = Reservation.create({
+        
+      }) 
     }
   }
-
+  
   return Reservation;
 };
