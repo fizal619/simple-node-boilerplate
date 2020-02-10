@@ -18,13 +18,13 @@ module.exports = (sequelize, DataTypes) => {
       else return true;
     }
 
-    static async newReservation(req, res) {
-      if (!this.checkConflicts(req.body.slot)) {
+    static async newReservation(name, slot, date) {
+      if (!this.checkConflicts(slot)) {
         return 'No tables available at this time';
       } else
         await this.create({
-          name: req.body.name,
-          slot: req.body.slot,
+          name: name,
+          slot: slot,
         });
     }
   }

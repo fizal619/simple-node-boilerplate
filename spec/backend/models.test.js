@@ -10,7 +10,6 @@ test('New Reservations can be created', async () => {
     body: {
       name: 'Jorge',
       slot: new Date('21 Feb 2020 17:00:00 GMT-0500'),
-      // day: 'Wednesday 4 August',
     },
   });
   let result = await Reservation.all();

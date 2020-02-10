@@ -7,6 +7,9 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res, next) => {
-  await Reservation.newReservation(req.body.slot, req.body.day);
+  const date = await Reservation.newReservation(
+    req.body.name,
+    new Date(`${req.body.date}`)
+  );
 });
 module.exports = router;
