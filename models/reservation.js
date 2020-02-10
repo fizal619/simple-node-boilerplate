@@ -10,20 +10,19 @@ module.exports = (sequelize, DataTypes) => {
       return await this.findAll();
     }
 
-    static async checkConflicts(slot, day) {
+    static async checkConflicts(slot) {
       const tablesTaken = await this.findAll({
-        where: { slot: slot, day: day },
+        where: { slot: slot },
       });
       if (tablesTaken < 10) return false;
       else return true;
     }
 
     static async newReservation(req, res) {
-      if (this.checkConflicts(req.body.slot, req.body.day)) {
+      if (this.checkConflicts(req.body.slot)) {
         return await this.create({
           name: req.body.name,
           slot: req.body.slot,
-          day: req.body.day,
         });
       } else return error('No tables available at this time');
     }
