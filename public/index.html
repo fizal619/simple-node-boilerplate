@@ -15,52 +15,34 @@
   <script src="js/main.js"></script>
 
   <div class="top-navbar">
-    <a id='home'class="nav-item" onclick="showHome()">Home</a>
-    <a id='reservation' class="nav-item" onclick="showReservation()">Reservation</a>
-    <a id='booked' class="nav-item" onclick="showUpcoming()">Upcoming</a>
+    <!-- <a id='home' class="nav-item" onclick="showHome()">Home</a>
+    <a id='reservation' class="nav-item" onclick="showReservation()">Reservation</a> -->
   </div>
   <!-- homepage -->
-  <div id='homepage' class='home'>
-    <img class='home-image' src='./img/Logo.png' alt='Pokemon Cafe Logo'/>
+  <div id='homepage'class='home'>
+    <img class='home-image' src='./img/Logo.png' alt='Pokemon Cafe Logo' />
     <h1>Welcome to Pokemon Cafe!</h1>
     <p>Please select below to book a reservation or to check upcoming reservations </p>
-  </div>
-  <!-- reservations -->
-  <div id='reservationspage' alt="Availability for Reservations">
-    <h1>Upcoming Reservations</h1>
+    <!-- reservations -->
+    <div id="reservationspage" alt="Upcoming Reservations">
+      <h1>Reservations</h1>
+      <div class="tablewrapper">
+        <table style="width:100%">
+          <tr>
+            <th id="0"></th>
+            <th id="1"></th>
+            <th id="2"></th>
+            <th id="3"></th>
+            <th id="4"></th>
+            <th id="5"></th>
+            <th id="6"></th>
+          </tr>
+        </table>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- upcoming -->
-  <div id="upcomingpage"  alt="Upcoming Reservations">
-    <h1>upcoming</h1>
-    <div class="tablewrapper">
-      <div class="tableheader">
-      hello
-      </div>
-      <table style="width:100%">
-      
-        <tr>
-          <th>Firstname</th>
-          <th>Lastname</th> 
-      
-        </tr>
-        <tr>
-          <td>Jill</td>
-          <td>Smith</td>
-      
-        </tr>
-        <tr>
-          <td>Eve</td>
-          <td>Jackson</td>
-      
-        </tr>
-        <tr>
-          <td>John</td>
-          <td>Doe</td>
-      
-        </tr>
-      </table>
-      </div>
-  </div>
 </body>
+
 </html>
