@@ -6,9 +6,13 @@ router.get('/', async (req, res) => {
   res.json(await Reservation.all());
 });
 
-router.post('/', async (req, res) => {
-  const newReservation = await Reservation.create(req.body);
-  res.json(newReservation);
+router.post('/', async (req, res, next) => {
+  try {
+    const newReservation = await Reservation.create(req.body);
+    res.json(newReservation);
+  } catch (error) {
+    next(error);
+  }
 });
 
 module.exports = router;

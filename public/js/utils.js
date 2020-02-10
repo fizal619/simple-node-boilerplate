@@ -19,3 +19,5 @@ const getReservations = () => {
       document.querySelector('#app').insertAdjacentHTML('afterbegin', names);
     });
 };
+
+getReservations();
