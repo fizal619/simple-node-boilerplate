@@ -3,7 +3,6 @@ const time = document.getElementById('time')
 
 const obj = {}
 
-
 ///eventListeners
 document.getElementById('time').onchange = function (event) {
   // access text property of selected option
@@ -46,34 +45,44 @@ const getReservation = () => {
 //creat func to check if table is reserved 
 //if reserved return table reserved 
 //and remove that slot from option 
-
 const checkIfReserved = () => {
-  
+  let tables = Array.from(document.getElementById('table'))
+  console.log(tables) 
+  tables.addEventListener("submit", function(event) {
+  event.preventDefault() 
+  tables.forEach(table => {
+      console.log(table)
+      if(table == event.target.id ) {
+          console.log('reserved') 
+      }
+      else {
+          console.log(table)
+      }
+    })
 }
+checkIfReserved()
 
 //before submit check if the table is reserved if it is alert(reserved)
 // make post request to submit reservation to db and create with div(table) 
-const table = document.getElementById('table').value 
-console.log(table)
-const tables = document.getElementById('tables-row')
-  if(table !== )
-    tables.addEventListener("submit", function(event) {
-      event.preventDefault();
-    fetch('http://localhost:3000/toys',{
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify( 
-      {
-        "name": form.name.value,
-        "image": form.image.value,
-        "likes": 0
-      })
-    })
-    .then(response => response.json())
-    .then(addToyCard)
-  })   
 
+// const tables = document.getElementById('tables-row')
+//     tables.addEventListener("submit", function(event) {
+      // event.preventDefault();
+      const makeReservation = () => {
+        fetch('http://localhost:3000/makeReservation',{
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify( 
+            {
+              id: id,
+              name: req.body.name,
+              slot: date,
+            })
+          })
+          .then(resp => resp.json())
+          .then(console.log)
+        }
+        makeReservation()
 

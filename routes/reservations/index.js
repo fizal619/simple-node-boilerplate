@@ -11,8 +11,10 @@ router.get('/', async (req,res) => {
 
 });
 
-app.post('http://localhost:3000/reservations', function (req, res) {
-  res.send('Got a POST request')
-})
+router.post('/newReservations', async (req, res) => {
+  res.json(await Reservation.all());
 
+
+})
 module.exports = router;
+
