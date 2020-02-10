@@ -9,6 +9,8 @@
 //   {6: ['1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00','8:00','9:00','10:00']},
 // ];
 
+const storeHours = ['1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00','8:00','9:00','10:00'];
+
 
 function MonthAsString(monthIndex) {
   let d = new Date();
@@ -56,8 +58,7 @@ const generateDates =()=> {
 }
 
 //generate table
-function generateTableHead() {
-  let table = document.querySelector("table");
+function generateTableHead(table) {
   let dates = generateDates();
   let thead = table.createTHead();
   let row = thead.insertRow();
@@ -67,14 +68,15 @@ function generateTableHead() {
     th.appendChild(text);
     row.appendChild(th);
   }
+  generateTable(table);
 }
 
 function generateTable(table) {
-  for (let element of data) {
+  for (let element of storeHours) {
     let row = table.insertRow();
-    for (key in element) {
+    for (let i=0; i<storeHours.length; i++) {
       let cell = row.insertCell();
-      let text = document.createTextNode(element[key]);
+      let text = document.createTextNode(storeHours[i]);
       cell.appendChild(text);
     }
   }

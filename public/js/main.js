@@ -27,8 +27,10 @@ const fetchReservations = () => {
     .then(response => {
       let data = response.data;
       
-      //
-      generateTableHead();
+      //create date heading
+      let table = document.querySelector("table");
+      generateTableHead(table);
+      
 
 
     })
