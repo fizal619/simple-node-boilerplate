@@ -14,6 +14,7 @@ module.exports = {
       slot: {
         type: Sequelize.DATE
       },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

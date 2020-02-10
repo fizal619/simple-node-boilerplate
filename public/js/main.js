@@ -81,7 +81,7 @@ checkIfReserved()
             })
           })
           .then(resp => resp.json())
-          .then(console.log)
+          .then(console.log(obj))
         }
         makeReservation()
 

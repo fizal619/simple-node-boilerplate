@@ -3,7 +3,6 @@ module.exports = (sequelize, DataTypes) => {
   const SequelizeReservation = sequelize.define('Reservation', {
     name: DataTypes.STRING,
     slot: DataTypes.DATE, 
-    isReserved: false 
   }, {});
 
 
@@ -12,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     static async all(){ 
       return await this.findAll();
       reservations = Reservation.create({
+        slot: Da
         
       }) 
     }
