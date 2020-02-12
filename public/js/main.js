@@ -4,10 +4,16 @@
 const getReservations = fetch('http://localhost:3000/reservations')
   .then(response => response.json())
   .then(data => {
+    console.log(data);
     let upcoming = [];
-
     data.map(el => {
-      console.log(el.slot);
+      console.log(data);
+      if (
+        data[data.length - 1].name === 'No Reservations Available at this time'
+      ) {
+        alert('No Reservations Available at this time');
+        data.pop();
+      }
       slotSplit = el.slot.split('T');
       slotMonth = slotSplit[0].slice(5, 7);
       slotDay = slotSplit[0].slice(8, 10);
