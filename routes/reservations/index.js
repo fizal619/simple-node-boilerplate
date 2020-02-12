@@ -50,7 +50,19 @@ router.post('/', async (req, res, next) => {
   let slot = new Date(
     Date.UTC(2020, month, +req.body.day, +slotSplit[0], +slotSplit[1])
   );
+  let prevHalf, prevFull;
+  if (+slotSplit[1] === 30) {
+    prevHalf = 0;
+    prevFull = +slotSplit[0];
+  } else {
+    prevHalf = 30;
+    prevFull = +slotSplit[0] - 1;
+  }
 
-  await Reservation.newReservation(req.body.name, slot);
+  prevHalfHour = new Date(
+    Date.UTC(2020, month, +req.body.day, prevFull, prevHalf)
+  );
+
+  await Reservation.newReservation(req.body.name, slot, prevHalfHour);
 });
 module.exports = router;
