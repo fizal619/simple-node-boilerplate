@@ -12,28 +12,42 @@
       <h2>Reservations:</h2>
 
       <form id="reservation" action="/reservations" method="POST">
-        Make a reservation
+        Make a reservation:
       <input id='Name' name="name" placeholder="Name"></input>
-      <input id='day' name="date" placeholder='Date'></input>
+      <select class='form' name='month' id="month">Month
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+      </select>
+      <input id='day' name="day"  type="number" min="1" max="31"></input>
       <select class="form" name='slot' id="slot">
-        <option>1:00</option>
-        <option>1:30</option>
-        <option>2:00</option>
-        <option>2:30</option>
-        <option>3:00</option>
-        <option>3:30</option>
-        <option>4:00</option>
-        <option>4:30</option>
-        <option>5:00</option>
-        <option>5:30</option>
-        <option>6:00</option>
-        <option>6:30</option>
-        <option>7:00</option>
-        <option>7:30</option>
-        <option>8:00</option>
-        <option>8:30</option>
-        <option>9:00</option>
-        <option> 9:30</option>
+        <option>13:00</option>
+        <option>13:30</option>
+        <option>14:00</option>
+        <option>14:30</option>
+        <option>15:00</option>
+        <option>15:30</option>
+        <option>16:00</option>
+        <option>16:30</option>
+        <option>17:00</option>
+        <option>17:30</option>
+        <option>18:00</option>
+        <option>18:30</option>
+        <option>19:00</option>
+        <option>19:30</option>
+        <option>20:00</option>
+        <option>20:30</option>
+        <option>21:00</option>
+        <option>21:30</option>
       </select>
       <button type="submit" onClick=>Submit</button>
     </form>
@@ -42,7 +56,6 @@
 <p>Upcoming Reservations:
   <ul id= 'upcoming'></ul>
 </p>
-
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
   </body>
