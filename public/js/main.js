@@ -2,6 +2,8 @@ const app = document.getElementById('app')
 const time = document.getElementById('time')
 const obj = {}
 
+
+
 ///eventListeners
 document.getElementById('time').onchange = function (event) {
   // access text property of selected option
@@ -16,8 +18,6 @@ document.getElementById('table').onchange = function (event) {
   obj["table"] = event.target.value
 }
 
-// document.getElementById('name').addEventListener('submit', functSubmit);
-
 
 document.getElementById('name').onchange = function (event) {
   // access text property of selected option
@@ -30,14 +30,6 @@ document.getElementById('submit').onclick = function() {
   makeReservation()
   console.log(obj)
 }
-
-// function functSubmit(event) {
-//   event.preventDefault();
-//   // var msg = document.getElementById("input1").value;
-//   // console.log(msg);
-//   // obj["name"] = event.target.value
-//   console.log(obj);
-// }
 
 
 ///get requests to retrieve reservations 
@@ -76,13 +68,10 @@ const checkIfReserved = () => {
 //before submit check if the table is reserved if it is alert(reserved)
 // make post request to submit reservation to db and create with div(table) 
 
-// const tables = document.getElementById('tables-row')
-//     tables.addEventListener("submit", function(event) {
-//       event.preventDefault();
 
       const makeReservation = (checkIfReserved) => {
         checkIfReserved
-        fetch('http://localhost:3000/reservations',{
+        fetch('http://localhost:3000/reservations/create',{
           method: "POST",
           headers: {
             "Content-Type": "application/json",

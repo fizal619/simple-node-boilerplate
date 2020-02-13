@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="src/css/vanilla-calendar-min.css">
   <link sty>
   <title>RESERVATIONS</title>
 </head>
 <body>
   <div id='app'></div>
-      <h4>Make Your Reservations</h4>
+      <h4>Make Your Reservations</h4> 
+      <div id="myCalendar" class="vanilla-calendar"></div>
+
       <label>Time</label>
       <select id="time">
         <option value="1:00">1:00</option>
@@ -52,6 +55,7 @@
         <input id='submit' type="submit" value="Submit" >
     <div id=tables-row></div>
   <script src="js/utils.js"> </script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js"></script> 
+  <script src="src/js/vanilla-calendar-min.js"></script>
 </body>
 </html>

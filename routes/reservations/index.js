@@ -13,8 +13,9 @@ router.get('/', async (req,res) => {
   res.json(await Reservation.all());
 });
 
-router.post('/reservations', async (req, res) => {
-  res.json(await Reservation.new(req));
+router.post('/create', async (req, res) => {
+  Reservation.create({slot:req.body.slot})
+
 });
 
 module.exports = router;

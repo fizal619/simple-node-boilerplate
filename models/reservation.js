@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       await this.findAll();
       reservations = Reservation.create({
         name: req.body.name,
-        slot: new Date(req.body.slot)        
+        slot: req.body.slot        
       }) 
     }
   }
