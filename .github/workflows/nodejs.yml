@@ -21,10 +21,7 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
       env:
-        CI: true
-- name: Deploy to Heroku
-  env:
-    HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
-    HEROKU_APP_NAME: "pacific-oasis-49477"
-  if: github.ref == 'refs/heads/master' && job.status == 'success'
-  run: git push https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$pacific-oasis-49477.git origin/master:master
+        HEROKU_API_TOKEN: ${{ secrets.HEROKU_POTATO }}
+        HEROKU_APP_NAME: "fizal-calculator"
+      if: github.ref == 'refs/heads/master' && job.status == 'success'
+    - run: git push https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git origin/master:master
