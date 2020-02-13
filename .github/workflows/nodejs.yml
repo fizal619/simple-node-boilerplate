@@ -21,7 +21,7 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
       env:
-        HEROKU_API_TOKEN: ${{ secrets.HEROKU_POTATO }}
-        HEROKU_APP_NAME: "fizal-calculator"
+        HEROKU_API_TOKEN: ${{ secrets. HEROKU_API_TOKEN }}
+        HEROKU_APP_NAME: "awesome-delicious"
       if: github.ref == 'refs/heads/master' && job.status == 'success'
     - run: git push https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git origin/master:master
