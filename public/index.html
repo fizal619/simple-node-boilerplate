@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <title>RESERVATIONS</title>
   </head>
   <body>
@@ -11,10 +12,10 @@
       <h1>Awesome Delicious</h1>
       <h2>Reservations:</h2>
 
-      <form id="reservation" action="/reservations" method="POST">
+      <form id="reservation" action="/reservations" method="POST" >
         Make a reservation:
       <input id='Name' name="name" placeholder="Name"></input>
-      <select class='form' name='month' id="month">
+      <select  name='month' id="month">
         <option>January</option>
         <option>February</option>
         <option>March</option>
@@ -49,14 +50,14 @@
         <option>21:00</option>
         <option>21:30</option>
       </select>
-      <button type="submit" onClick=>Submit</button>
+      <button id='submit'type="submit">Submit</button>
     </form>
     </div>
     </div>
 <p>Upcoming Reservations:
   <ul id= 'upcoming'></ul>
 </p>
-    <script src="js/utils.js"></script>
+ <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

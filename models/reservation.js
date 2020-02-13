@@ -27,10 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     static async newReservation(name, slot, prev) {
       const conflictCheck = await this.checkConflicts(slot, prev);
       if (conflictCheck === true) {
-        await this.create({
-          name: 'No Reservations Available at this time',
-          slot: slot
-        });
+        console.log('No reservations available at this time');
       }
       if (conflictCheck === false) {
         await this.create({
