@@ -25,13 +25,17 @@ This project uses Sequelize as an ORM. It was set up using the directions here: 
 ```javascript
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const SequelizeReservation = sequelize.define('Reservation', {
-    name: DataTypes.STRING,
-    slot: DataTypes.DATE
-  }, {});
+  const SequelizeReservation = sequelize.define(
+    'Reservation',
+    {
+      name: DataTypes.STRING,
+      slot: DataTypes.DATE,
+    },
+    {}
+  );
 
   class Reservation extends SequelizeReservation {
-    static async all(){
+    static async all() {
       return await this.findAll();
     }
   }
@@ -48,3 +52,4 @@ The Reservation class in this example allows you to define instance methods and 
 
 For an application of this complexity ensuring that database operations through models work well is important. Models are mostly your own code.
 
+![](https://github.com/vchan8084/simple-node-boilerplate/workflows/Node.js%20CI/badge.svg)
