@@ -1,3 +1,4 @@
+![Node.js CI](https://github.com/JorgeAcostaDLP/simple-node-boilerplate/workflows/Node.js%20CI/badge.svg)
 # Simple Node Boilerplate
 
 ## Introduction
