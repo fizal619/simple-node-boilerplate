@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const { Reservation } = require('../../models');
-var cors = require('cors')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+
+
+router.use(bodyParser.json())
 
 router.use(cors())
 

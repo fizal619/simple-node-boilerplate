@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
 
   class Reservation extends SequelizeReservation {
     static async all(){ 
-      return await this.findAll();
+      await this.findAll();
       reservations = Reservation.create({
         name: req.body.name,
         slot: new Date(req.body.slot)        

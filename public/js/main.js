@@ -1,6 +1,5 @@
 const app = document.getElementById('app')
 const time = document.getElementById('time')
-
 const obj = {}
 
 ///eventListeners
@@ -17,16 +16,28 @@ document.getElementById('table').onchange = function (event) {
   obj["table"] = event.target.value
 }
 
-document.getElementById('name').addEventListener('submit', functSubmit);
+// document.getElementById('name').addEventListener('submit', functSubmit);
 
 
-function functSubmit(event) {
-  event.preventDefault();
-  var msg = document.getElementById("input1").value;
-  console.log(msg);
-  console.log(obj);
+document.getElementById('name').onchange = function (event) {
+  // access text property of selected option
+  console.log(event.target.value);
   obj["name"] = event.target.value
 }
+
+
+document.getElementById('submit').onclick = function() {
+  makeReservation()
+  console.log(obj)
+}
+
+// function functSubmit(event) {
+//   event.preventDefault();
+//   // var msg = document.getElementById("input1").value;
+//   // console.log(msg);
+//   // obj["name"] = event.target.value
+//   console.log(obj);
+// }
 
 
 ///get requests to retrieve reservations 
@@ -38,7 +49,7 @@ const getReservation = () => {
     method: "GET"
   })
   .then(resp => resp.json())
-  .then(console.log);
+  .then(console.log(userObj));
 };
 
 
@@ -61,7 +72,6 @@ const checkIfReserved = () => {
     })
   })
 }
-// checkIfReserved()
 
 //before submit check if the table is reserved if it is alert(reserved)
 // make post request to submit reservation to db and create with div(table) 
@@ -83,7 +93,11 @@ const checkIfReserved = () => {
             })
           })
           .then(resp => resp.json())
-          .then(console.log(obj))
+          .then(console.log);
+          
         }
-        makeReservation()
+
+        addTablesToDom = () => {
+          //add to the dom 
+        } 
 
