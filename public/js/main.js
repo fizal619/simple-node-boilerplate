@@ -20,44 +20,37 @@
 //   }
 // };
 
+let settings = {
+  selector: "#myCalendar",
+  date: new Date(),
+  todaysDate: new Date(),
+  pastDates: false,
+  months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+  shortWeekday: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  onSelect: (data) => {
+    generateDate(data);
+  }
+};
 
 //Get all the reservations
 const fetchReservations = () => {
   return axios.get('/reservations')
     .then(response => {
       let data = response.data;
-
-      //create date heading
-      // let table = document.querySelector("table");
-      // generateTableHead(table);
-      let myCalendar = new VanillaCalendar({
-        selector: "#myCalendar",
-        date: new Date(),
-        todaysDate: new Date(),
-        pastDates: false,
-        months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-        shortWeekday: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-        // availableWeekDays: [
-        //   { day: 'monday', others: values },
-        //   { day: 'tuesday', others: values }
-        // ],
-        // availableDates: [
-        //   { date: '2019-09-15', others: values },
-        //   { date: '2019-09-16', others: values },
-        //   { date: '2019-09-17', others: values },
-        //   { date: '2019-09-25', others: values },
-        //   { date: '2019-09-26', others: values }
-        // ],
-        // datesFilter: true,
-        // onSelect: (data, elem) => {}
-      })
-
+      let myCalendar = new VanillaCalendar(settings)
       myCalendar.init();
-
-
-
+      document.getElementById('date').value = moment().format('MM/DD/YYYY');
     })
     .catch(error => console.error(error));
 };
+
+const fetchAvailableTimes = () => {
+  return axios.get('/reservationTime')
+    .then(response => {
+      let data = response.data;
+    })
+}
+
+
 
 fetchReservations();

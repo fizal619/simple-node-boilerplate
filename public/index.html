@@ -12,9 +12,10 @@
 
 <body>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
   <script src="js/vanilla-calendar-min.js"></script>
-  <script src="js/utils.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/utils.js"></script>
 
   <div class="top-navbar">
     <!-- <a id='home' class="nav-item" onclick="showHome()">Home</a>
@@ -25,14 +26,45 @@
     <img class='home-image' src='./img/Logo.png' alt='Pokemon Cafe Logo' />
     <p>Please select below to book a reservation or to check upcoming reservations </p>
     <!-- reservations -->
-    <div id="reservationspage" alt="Upcoming Reservations">
-      <!-- Buttons -->
-      <div class="area-buttons">
-        <button class="info" name="availableDates">Set available dates</button>
-      </div>
+    <div id="reservation-container">
       <!-- Calendar -->
       <div id="myCalendar" class="vanilla-calendar" style="margin-bottom: 20px"></div>
+      <!-- Time Slots -->
+      <div id="slots">
+        <div class="reservation">Make Reservation</div>
+        <!-- Form -->
+        <form>
+          <ul class="form-style-1">
+            <li>
+              <label>Full Name
+                <span class="required">*</span>
+              </label>
+              <input type="text" name="field1" class="field-divided" placeholder="First" />
+              <input type="text" name="field2" class="field-divided" placeholder="Last" />
+            </li>
+            <li>
+              <label>Date
+                <span class="required">*</span>
+              </label>
+              <input id="date" type="text" name="field3" class="field-long" />
+            </li>
+            <li>
+              <label>Time</label>
+              <select name="field4" class="field-select">
+                <option value="Advertise">Advertise</option>
+                <option value="Partnership">Partnership</option>
+                <option value="General Question">General</option>
+              </select>
+            </li>
+            <br>
+            <li>
+              <input type="submit" value="Book" />
+            </li>
+          </ul>
+        </form>
+      </div>
     </div>
+  </div>
   </div>
   </div>
   </div>
