@@ -32,6 +32,11 @@ const fetchAvailableTimes = () => {
     })
 }
 
+const makeReservation = async () => {
+  let name = `${document.getElementById('first').value} ${document.getElementById('last').value}`
+  let time = document.getElementById('date').value;
+  const data = await axios.post("/reservations", name);
+}
 
 
 fetchReservations();

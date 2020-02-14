@@ -39,8 +39,8 @@
               <label>Full Name
                 <span class="required">*</span>
               </label>
-              <input type="text" name="field1" class="field-divided" placeholder="First" />
-              <input type="text" name="field2" class="field-divided" placeholder="Last" />
+              <input id="first" type="text" name="field1" class="field-divided" placeholder="First" />
+              <input id="last" type="text" name="field2" class="field-divided" placeholder="Last" />
             </li>
             <li>
               <label>Date
@@ -55,7 +55,7 @@
             </li>
             <br>
             <li>
-              <input type="submit" value="Book" />
+              <input type="submit" value="Book" onclick="makeReservation()" />
             </li>
           </ul>
         </form>
