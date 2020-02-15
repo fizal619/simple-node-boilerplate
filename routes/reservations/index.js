@@ -4,11 +4,20 @@ const { Reservation } = require('../../models');
 
 
 router.get('/', async (req, res) => {
-  res.json(await Reservation.all());
+  try {
+    res.json(await Reservation.all());
+  } catch (error) {
+    res.json(await Reservation.all());
+  }
 });
 
-router.post('/', async (req, res) => {
-  const newStudent = await Reservation.create(req.body);
+router.post('/', async (req, res, next) => {
+  try {
+    let reservation = await Reservation.create(req.body);
+    res.json(reservation);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 

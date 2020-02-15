@@ -8,7 +8,8 @@ let settings = {
   months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   shortWeekday: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
   onSelect: (data) => {
-    generateDate(data);
+    let date = formatDate(data);
+    document.getElementById('date').value = date;
   }
 };
 
@@ -35,7 +36,8 @@ const fetchAvailableTimes = () => {
 const makeReservation = async () => {
   let name = `${document.getElementById('first').value} ${document.getElementById('last').value}`
   let time = document.getElementById('date').value;
-  const data = await axios.post("/reservations", name);
+
+  await axios.post("/reservations", { name: name, slot: time });
 }
 
 

@@ -22,14 +22,13 @@ const timeSlots = [
   '22:00',
 ];
 
-const generateDate = (data) => {
+const formatDate = (data) => {
   let date = moment(data.date).format('MM/DD/YYYY');
-  document.getElementById('date').value = date;
+  return date;
 }
 
 const generateTime = () => {
   //call axios request to generate time.. but for now a dummy data...
-
   // get reference to select element
   let sel = document.getElementById('timeSlots');
 
@@ -42,4 +41,9 @@ const generateTime = () => {
     sel.appendChild(opt);
   })
 
+}
+
+module.exports = {
+  formatDate,
+  generateTime
 }
