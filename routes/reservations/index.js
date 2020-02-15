@@ -6,6 +6,9 @@ const cors = require('cors')
 
 
 router.use(bodyParser.json())
+router.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 
 router.use(cors())
 
@@ -14,8 +17,13 @@ router.get('/', async (req,res) => {
 });
 
 router.post('/create', async (req, res) => {
-  Reservation.create({slot:req.body.slot})
+  console.log(req.body)
 
+  await Reservation.add(req.body)
+  // Reservation.create({slot: req.body.slot})
+  res.json({
+    test: 'lol'
+  })
 });
 
 module.exports = router;

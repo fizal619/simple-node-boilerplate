@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
 
 
 
+
 class Reservation extends SequelizeReservation {
   static async all() {
     return await this.findAll();
@@ -17,10 +18,14 @@ class Reservation extends SequelizeReservation {
   }
 
   static async add(reservation) {
+
     return this.create({
+
       name: reservation.name,
       slot: reservation.slot,
     });
+
+
   }
 }
 
